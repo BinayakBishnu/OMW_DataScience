@@ -118,5 +118,21 @@ print(descriptor_counts) """
 n_fruity = reviews.description.map(lambda desc: "fruity" in desc).sum()
 descriptor_counts = pd.Series([n_trop, n_fruity], index=['tropical', 'fruity']) """
 
+# print(data.groupby('Origin').Origin.count())
+# print(data.Origin.value_counts())
+
+# print(data.groupby('Origin').Rate.min())
+
+# print(data.groupby('Origin').Rate.mean())
+
+# print(data.groupby(['Origin','Quality']).Name.unique())
+
+# print(data.groupby(['Origin','Quality']).apply(lambda row: row.loc[row.Rating.idxmax()]))
+#^ here the rows are the groups based on Origin and Quality
+#^ rows are then manipulated to find max in each row
+
+# print(data.groupby('Name').Rate.agg([len,min,max]))
+# print(data.groupby('Origin').Rate.agg([len,min,max]))
+
 
 
