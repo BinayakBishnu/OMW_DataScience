@@ -134,5 +134,23 @@ descriptor_counts = pd.Series([n_trop, n_fruity], index=['tropical', 'fruity']) 
 # print(data.groupby('Name').Rate.agg([len,min,max]))
 # print(data.groupby('Origin').Rate.agg([len,min,max]))
 
+# print(data.index)
+# print(data.reset_index())
 
+
+"""
+Sometimes the price column is null. How many reviews in the dataset are missing a price?
+missing_price_reviews = reviews[reviews.price.isnull()]
+n_missing_prices = len(missing_price_reviews)
+# Cute alternative solution: if we sum a boolean series, True is treated as 1 and False as 0
+n_missing_prices = reviews.price.isnull().sum()
+# or equivalently:
+n_missing_prices = pd.isnull(reviews.price).sum()
+"""
+
+""" 
+What are the most common wine-producing regions? Create a Series counting the number of times each value occurs in the region_1 field.
+This field is often missing data, so replace missing values with Unknown. Sort in descending order.
+#? reviews_per_region = reviews.region_1.fillna("Unknown").value_counts().sort_values(ascending=False)
+"""
 
