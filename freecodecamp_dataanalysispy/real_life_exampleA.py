@@ -29,12 +29,7 @@ sales = pd.read_csv("freecodecamp_dataanalysispy\sales_data.csv", parse_dates=['
 # print(correlation)
 # sns.heatmap(correlation, cmap="hot")
 
-sales['cc'] = sales['Cost']
-print(sales[['Cost','cc']].head())
-sales.loc[3,'cc'] = 600
-print(sales[['Cost','cc']].head())
 
-print((sales['cc']!=sales['Cost']).sum())   #! number of different values
 
 
 
