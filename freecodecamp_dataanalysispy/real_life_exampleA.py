@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 sales = pd.read_csv("freecodecamp_dataanalysispy\sales_data.csv", parse_dates=['Date'])
 
@@ -20,11 +21,20 @@ sales = pd.read_csv("freecodecamp_dataanalysispy\sales_data.csv", parse_dates=['
 # ax.axvline(sales['Unit_Cost'].mean(), color='red')
 # ax.axvline(sales['Unit_Cost'].median(), color='green')
 
-bx = sales['Unit_Cost'].plot(kind="hist", figsize=(14,6))
-bx.set_xlabel("x values")
-bx.set_ylabel("y values")
+# bx = sales['Unit_Cost'].plot(kind="hist", figsize=(14,6))
+# bx.set_xlabel("x values")
+# bx.set_ylabel("y values")
 
+# correlation = sales.corr()
+# print(correlation)
+# sns.heatmap(correlation, cmap="hot")
 
+sales['cc'] = sales['Cost']
+print(sales[['Cost','cc']].head())
+sales.loc[3,'cc'] = 600
+print(sales[['Cost','cc']].head())
+
+print((sales['cc']!=sales['Cost']).sum())   #! number of different values
 
 
 
