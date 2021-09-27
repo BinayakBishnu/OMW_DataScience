@@ -1,5 +1,3 @@
-import seaborn as sns
-import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
@@ -10,6 +8,8 @@ import chardet
 # import thefuzz
 # from thefuzz import process
 
+import seaborn as sns
+import matplotlib.pyplot as plt
 pd.plotting.register_matplotlib_converters()
 # %matplotlib inline
 
@@ -28,7 +28,7 @@ print(earthquake_data.info())
 #! print(earthquake_data.nst.dtype)
 #! earthquake_data.nst = earthquake_data.nst.fillna(0.0)
 #! print(earthquake_data.loc[earthquake_data['nst'].isnull(),['time']])
-#!
+
 for column in earthquake_data.head():
     # print(earthquake_data[column].dtype)
     if (earthquake_data[column].dtype) == 'float64':
