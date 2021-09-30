@@ -27,3 +27,7 @@ a = np.array([[3, 5, 1, 7, 9, 4, ],
 print(a)
 b = a.reshape((9, 2))
 print(b)
+
+m = np.arange(10)
+print(m)
+print(m+10)
