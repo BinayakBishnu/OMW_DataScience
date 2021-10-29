@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Import data
-df = pd.read_csv('project3.csv')
+df = pd.read_csv('freecodecamp_dataanalysispy\project3.csv')
 
 # Add 'overweight' column
 df['BMI'] = df['weight'] * 10000 / ((df['height'])**2)
@@ -32,12 +32,14 @@ def draw_cat_plot():
     # Draw the catplot with 'sns.catplot()'
     fig = sns.catplot(x ="variable", hue = "value", col ="cardio", data = df_cat, kind ="count")
     fig.set_axis_labels("variable", "total")
+    print(fig)
+    
     # sns.catplot(x ="variable", hue = "value", col ="cardio", data = df_cat, kind ="count")
     # plt.show()
 
     # Do not modify the next two lines
-    fig.savefig('catplot.png')
-    return fig
+    # fig.savefig('catplot.png')
+    # return fig
 
 draw_cat_plot()
 
@@ -59,6 +61,10 @@ def draw_heat_map():
     sns.heatmap(corr, mask = mask , vmax = .258, center = 0, 
             square = True, linewidths = .5, cbar_kws = {"shrink": .5}, annot = True, fmt ='.1f')
     
-    # Do not modify the next two lines
-    fig.savefig('heatmap.png')
-    return fig
+    # # Do not modify the next two lines
+    # fig.savefig('heatmap.png')
+    # return fig
+
+
+draw_cat_plot()
+draw_heat_map()
